@@ -1,6 +1,39 @@
 # orbbec_kinfu
 
-https://link.medium.com/lyUaxcNURKb
+Article: https://link.medium.com/lyUaxcNURKb
+
+## Build
+
+Put OrbbecSDKConfig.cmake to your OrbbecSDK directory.
+```
+mkdir -p build && cd build
+cmake -DOrbbecSDK_DIR=<Your OrbbecSDK directory>
+make -j4
+cd ..
+```
+
+## Run
+
+```
+$ build/OrbbecKinfu --help
+usage: build/OrbbecKinfu [options]
+ -a [align_mode(2)]  0:Disabled, 1:HW, 2:SW
+ -k [kinfu_mode(0)]  0:Disabled, 1:depth, 2:colored
+ -kc                  coarse in colored kinfu
+ -kr                  reset kinfu if ICP fails.
+ -ks [kinfu_show_mode(0)]  0: render, 1: +3D_View, 2: +normals
+ -md [max_depth_mm(5000)]  max depth in mm
+ -cloff               set openCL off
+ -ss [show_scale(0.50)]  window show scale
+ 
+keys:
+  ESC : quit app
+  s : save depth.ply in depth-kinfu, color.ply in colored-kinfu
+  r : reset kinfu
+  f : freeze 3D View / restore
+```
+
+## Reference
 
 ### Orbbec Femto Bolt
 
